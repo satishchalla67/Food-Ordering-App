@@ -2,7 +2,7 @@
 //Episode 1---------------------------------------------------------------------------------------
 //REACT ELEMENT 
 
-import React, { useState } from "react"
+import React, { createContext, useState } from "react"
 import ReactDOM from "react-dom/client"
 
 const heading = React.createElement("h1", {id:"heading", class: "headingClass"}, 
@@ -117,6 +117,7 @@ root.render(parent);
 
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, useRouteError } from "react-router-dom";
 
 //React Functional Component
 const JsxHeading = () => (
@@ -270,3 +271,91 @@ setListOfRestaurants([]) //making ListOfRestaurants empty
 
 //useEffect(() => {}, [btnNameReact]);
 //if dependency array is [btnNameReact], useEffect will be called whenever there is a change in btnNameReact
+
+
+//---------
+//The below are from react-router-dom
+
+//createBrowserRouter, RouterProvider
+
+//Outlet - to route children routes and changes component according to children
+
+//useRouteError - is a hook given to us by React to handle error in routes
+
+
+//import { Link } from "react-router-dom";
+//link - given by react-router-dom - <Link to="/contact-us">Contact us<Link/> - this will change the components without refreshing the full page.
+
+//import { useParams } from "react-router-dom";
+
+
+
+
+
+//Episode 8-------------------------------------------------------------------------------------------------------
+
+
+//REACT CLASS COMPONENT LIFE CYCLE
+
+//1.Whenever a class component is called new instance of that class
+//component is created.
+
+//2.First constructor() will be called -> 
+//render() will be called ->
+//componentDidMount() will be called
+
+//componentDidMount is used to make an API Call
+
+
+//this.state = {<object>}; is a object
+//this.setState({<object>}); is a method 
+
+
+//Episode 8-------------------------------------------------------------------------------------------------------
+
+//Chunking
+//Code Splitting
+//Dynamic Bundling
+//lazy loading
+//on demand loading
+//dynamic import
+
+import { lazy, Suspense } from "react";
+
+//Episode 9-------------------------------------------------------------------------------------------------------
+
+//Different types if using CSS styles in project
+
+//1.Not used in industry
+//SASS - Syntactically Awesome Style Sheets
+
+//2.Used in industry
+//Styled Components
+
+//3.CSS Librabies
+//-------------
+//Material UI
+//Bootstrap
+//Chakra UI
+//Ant UI
+
+//4.Tailwind CSS
+
+//VS Code extention - Tailwind IntelliSense
+
+
+//Episode 11-------------------------------------------------------------------------------------------------------
+
+//HIGHER ORDER COMPONENTS = It is a component that a takes a component and returns a component
+//                          Takes an existing component and enhances it
+
+
+//Accordian = where we can expand or collapse the cards
+
+
+//Lifiting the state up
+
+import { useContext } from "react";
+//props drilling
+//      - createContext() - to create a context which is like a gobal object that can be used anywhere in the project
+//      - userContext() - It is a hook which is used to use context in any React component. 
