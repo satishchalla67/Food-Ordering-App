@@ -14,7 +14,7 @@ global.fetch = jest.fn(() => {
 });
 
 
-it("Should render the Body component with Search", async () => {
+it("Should render the Body component and test Search functionality", async () => {
 
     await act( async ()=> render(<BrowserRouter><Body/></BrowserRouter>));
 
@@ -35,5 +35,22 @@ it("Should render the Body component with Search", async () => {
     const resCardAfter = screen.getAllByTestId("resCard");
 
     expect(resCardAfter.length).toBe(1);
+
+});
+
+
+it("Should render the Body component and test Top Rated Restaurants button", async () => {
+
+    await act(async () => render(<BrowserRouter><Body/></BrowserRouter>));
+
+    const topRatedBtn = screen.getByRole('button', {name: "Top Rated Restaurants"});
+
+    fireEvent.click(topRatedBtn);
+
+
+    const resCards = screen.getAllByTestId("resCard");
+
+    expect(resCards.length).toBe(8);
+
 
 });
