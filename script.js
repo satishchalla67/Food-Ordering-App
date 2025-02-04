@@ -359,3 +359,77 @@ import { useContext } from "react";
 //props drilling
 //      - createContext() - to create a context which is like a gobal object that can be used anywhere in the project
 //      - userContext() - It is a hook which is used to use context in any React component. 
+
+
+//Episode 12-------------------------------------------------------------------------------------------------------
+
+//Redux - it is a state management tool. Redux offers easy debugging
+
+//Redux is not manditory for small or mid sized applications. Redux and React are seperate libraries
+
+
+//Redux Store = It is like a very big object which is accessable to any component in the React
+
+
+//#Redux
+//  - Install @reduxjs/toolkit and react-redux
+//  - Build our store
+//  - Connect our store to our app
+//  - Slice(cartSlice)
+//  - dispatch(action)
+//  - Selector
+
+
+
+//1.Create a store using configureStore()
+import { configureStore } from "@reduxjs/toolkit";
+
+//2.Provide the store to react application using provider. It takes store as a prop
+
+import { Provider } from "react-redux";
+
+
+//3.create a slice using createSlice()
+import { createSlice } from "@reduxjs/toolkit";
+//This sice will take configurations like =
+// - name
+// - initialState
+// - reducers = This will contain actions of cart like = addItem, removeItem, clearCart
+//              These are a small APIs to communicate with Redux store
+//              Takes 2 paramerters state and action
+
+//Reducers (functions that handle state changes).
+//Actions (functions that dispatch state changes).
+
+
+
+//Episode 13-------------------------------------------------------------------------------------------------------
+
+
+//Types of testing
+//1.Unit Testing
+//2.Integration Testing
+//3.End to end testing = e2e testing
+
+
+//Libraries we are going to use:
+//React Testing Library
+//Jest
+
+
+//Setting up Testing.
+
+//1.Install React Testing Library = npm i -D @testing-library/react
+//2.Install jest =                  npm i -D jest
+//3.Install Babel dependencies =    npm install --save-dev babel-jest @babel/core @babel/preset-env
+//4.Configure Babel                 Go to jest website, search for "Using Babel"
+//                                  create and add content in file "babel.cofig.js"
+//5.Configure parcel config file=   create a file .parcelrc and copy content from parcel website=> javascript=> bebal=> using other tools
+//to disable babel transpilation
+//6.Jest cofiguration=              npx jest --init
+//7.Install jsdom Library=          Go to https://testing-library.com/ => React Testing Library => Setup => Jest 28 => copy the command
+//                                  npm install --save-dev jest-environment-jsdom
+//8.Install babel preset-react=     npm i -D @babel/preset-react (To make JSX work in testcases)
+//9.Include @babel/preset-react     Add ['@babel/preset-react', { runtime: "automatic" }], inside babel.config.js
+//inside babel config
+//10.Install=                       npm i -D @testing-library/jest-dom

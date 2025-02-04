@@ -50,7 +50,7 @@ const Body = () => {
         <div className="bg-gray-100">
             <div className="btn-container">
                 
-                <input type="text" className="border border-solid border-black" value={searchText} onChange={(e)=> setSearchText(e.target.value)}/>
+                <input data-testid="inputSearch" type="text" className="border border-solid border-black rounded-lg" value={searchText} onChange={(e)=> setSearchText(e.target.value)}/>
                 <button className="px-4 py-2 m-4 bg-green-200 hover:bg-green-300 cursor-pointer rounded-sm"
                 onClick={()=> {
                     const filteredRestaurents = ListOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -65,7 +65,7 @@ const Body = () => {
                 }}>Top Rated Restaurants</button>
 
                 <label>Username: </label>
-                <input className="border-black border" value={LoggedInUser} onChange={(e) => {setUserName(e.target.value)}}></input>
+                <input className="border-black border rounded-lg" value={LoggedInUser} onChange={(e) => {setUserName(e.target.value)}}></input>
             </div>
 
 
